@@ -23,7 +23,7 @@ const App = () =>{
     <>
       <NavBar/>
       <Routes>
-        <Route path='/' element={<h2>Post Office</h2>}/>
+        <Route path='/' element={<h1>Post Office</h1>}/>
         <Route path='/mailboxes' element={<MailboxList mailboxes={mailboxes}/>}/>
         <Route path='/new-mailbox' element={<MailboxForm addBox={addBox}/>}/>
         <Route path='/mailboxes/:mailboxId' element={<MailboxDetails mailboxes={mailboxes}/>}/>

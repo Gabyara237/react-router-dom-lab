@@ -4,6 +4,7 @@ const MailboxList =(props) =>{
     const {mailboxes} = props
     return(
         <>
+            <h1>Mailbox List</h1>
             <ul>
                 {mailboxes.map((box)=>(
                     <li key ={box._id}>
