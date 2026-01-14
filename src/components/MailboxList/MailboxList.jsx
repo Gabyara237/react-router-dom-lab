@@ -1,4 +1,5 @@
-const MailboxList =() =>{
+const MailboxList =(props) =>{
+    console.log(props.mailboxes)
     return(
         <h1>MailboxList</h1>
     )
