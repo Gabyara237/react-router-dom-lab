@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router';
 import MailboxDetails from "./components/MailboxDetails/MailboxDetails"
 import MailboxList from "./components/MailboxList/MailboxList"
 import MailboxForm from "./components/MailboxForm/MailboxForm"
+import LetterForm from './components/LetterForm.jsx/LetterForm';
 import NavBar from "./components/NavBar/NavBar"
 
 import './App.css'
@@ -10,6 +11,7 @@ import { useState } from 'react';
 const App = () =>{
 
   const [mailboxes,setMailboxes] = useState([])
+  const [letters, setLetters] = useState([])
 
   const addBox = (newBox)=>{
     const newBoxWithId = {
@@ -17,6 +19,10 @@ const App = () =>{
       _id: mailboxes.length+1
     }
     setMailboxes([...mailboxes,newBoxWithId])
+  }
+
+  const addLetter = (newLetter) =>{
+    setLetters([...letters, newLetter])
   }
   
   return(
