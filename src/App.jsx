@@ -22,7 +22,11 @@ const App = () =>{
   }
 
   const addLetter = (newLetter) =>{
-    setLetters([...letters, newLetter])
+    const letterWithId = {
+      ...newLetter,
+      mailboxId: Number(newLetter.mailboxId),
+    };
+    setLetters([...letters, letterWithId]);
   }
   
   return(
@@ -32,7 +36,7 @@ const App = () =>{
         <Route path='/' element={<h1>Post Office</h1>}/>
         <Route path='/mailboxes' element={<MailboxList mailboxes={mailboxes}/>}/>
         <Route path='/new-mailbox' element={<MailboxForm addBox={addBox}/>}/>
-        <Route path='/mailboxes/:mailboxId' element={<MailboxDetails mailboxes={mailboxes}/>}/>
+        <Route path='/mailboxes/:mailboxId' element={<MailboxDetails mailboxes={mailboxes} letters={letters}/>}/>
         <Route path='/new-letter' element={<LetterForm mailboxes={mailboxes} addLetter={addLetter}/>}/>
       </Routes>
     </>

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 
 
 const initialState = {
-    mailbox: "",
+    mailboxId: "",
     recipient: "",
     message: ""
 }
@@ -15,7 +15,7 @@ const LetterForm =(props)=>{
 
     const handleSubmit = (evt) =>{
         evt.preventDefault()
-        const id= formData.mailbox
+        const id= formData.mailboxId
         addLetter(formData)
         setFormData(initialState)
         navigate(`/mailboxes/${id}`)
@@ -31,10 +31,10 @@ const LetterForm =(props)=>{
             <h1>New Letter</h1>
 
             <form onSubmit={handleSubmit}>
-                <label htmlFor="mailbox">Select a Mailbox</label>
+                <label htmlFor="mailboxId">Select a Mailbox</label>
                 <select
-                    name="mailbox"
-                    value={formData.mailbox}
+                    name="mailboxId"
+                    value={formData.mailboxId}
                     onChange={handleChange}
                 >
                     <option value=""> Select a mailbox </option>
