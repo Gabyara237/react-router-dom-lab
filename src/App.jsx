@@ -26,7 +26,7 @@ const App = () =>{
         <Route path='/' element={<h2>Post Office</h2>}/>
         <Route path='/mailboxes' element={<MailboxList mailboxes={mailboxes}/>}/>
         <Route path='/new-mailbox' element={<MailboxForm addBox={addBox}/>}/>
-        <Route path='/mailboxes/:mailboxId' element={<MailboxDetails/>}/>
+        <Route path='/mailboxes/:mailboxId' element={<MailboxDetails mailboxes={mailboxes}/>}/>
       </Routes>
     </>
   )
